@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Dashboard } from "./pages/Dashboard/Dashboard";
 import { Layout } from "./components/layout/Layout";
 import { Courses } from "./pages/Courses/Courses";
+import { Error } from "./pages/Error/Error";
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
           // { path: "/courses/:id", element: <Course /> },
         ],
       },
-      // { path: "*", element: <ErrorPage /> },
+      { path: "*", element: <Error /> },
     ],
   },
 ]);

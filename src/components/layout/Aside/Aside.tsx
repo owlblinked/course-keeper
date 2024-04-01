@@ -1,9 +1,8 @@
+import { memo } from "react";
 import { Navigation } from "../Navigation/Navigation";
 
-export const Aside = () => {
-  return (
-    <aside>
-      <Navigation />
-    </aside>
-  );
-};
+export const Aside = memo(() => (
+  <aside>
+    <Navigation />
+  </aside>
+));

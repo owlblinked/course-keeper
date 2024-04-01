@@ -1,11 +1,24 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Dashboard } from "./pages/Dashboard/Dashboard";
+import { Layout } from "./components/layout/Layout";
+import { Courses } from "./pages/Courses/Courses";
 import "./App.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Dashboard />,
+    element: <Layout />,
+    children: [
+      { index: true, element: <Dashboard /> },
+      {
+        path: "/courses",
+        children: [
+          { index: true, element: <Courses /> },
+          // { path: "/courses/:id", element: <Course /> },
+        ],
+      },
+      // { path: "*", element: <ErrorPage /> },
+    ],
   },
 ]);
 

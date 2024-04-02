@@ -1,14 +1,48 @@
-import axios from "axios";
+import { AxiosRequestConfig } from "axios";
+import axiosInstance, { apiRequestConfig } from "./axiosConfig";
 
-const BASE_URL = "https://pomodorizer-f6ab6d5f16aa.herokuapp.com";
+class Api {
+  static get(url: string, config: Partial<AxiosRequestConfig> = {}) {
+    return axiosInstance.get(url, {
+      ...apiRequestConfig,
+      ...config,
+    });
+  }
 
-const instance = axios.create({
-  baseURL: BASE_URL,
-  headers: {
-    "Access-Control-Allow-Origin": "*",
-    "Content-Type": "application/json",
-  },
-  withCredentials: true,
-});
+  static post(
+    url: string,
+    body?: any,
+    queryParams?: any,
+    config: Partial<AxiosRequestConfig> = {}
+  ) {
+    return axiosInstance.post(url + queryParams, body, {
+      ...apiRequestConfig,
+      ...config,
+    });
+  }
 
-export default instance;
+  static put(
+    url: string,
+    body?: any,
+    queryParams?: any,
+    config: Partial<AxiosRequestConfig> = {}
+  ) {
+    return axiosInstance.put(url + queryParams, body, {
+      ...apiRequestConfig,
+      ...config,
+    });
+  }
+
+  static delete(
+    url: string,
+    queryParams?: any,
+    config: Partial<AxiosRequestConfig> = {}
+  ) {
+    return axiosInstance.delete(url + queryParams, {
+      ...apiRequestConfig,
+      ...config,
+    });
+  }
+}
+
+export default Api;

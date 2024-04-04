@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Api from "../../api/api";
 import { CoursesList } from "../../components/courses/CoursesList/CoursesList";
 
@@ -22,5 +23,10 @@ export const Courses = () => {
     fetchData();
   }, []);
 
-  return <CoursesList data={data} loading={loading} />;
+  return (
+    <>
+      <Link to="/courses/new">Add a new course</Link>
+      <CoursesList data={data} loading={loading} />
+    </>
+  );
 };

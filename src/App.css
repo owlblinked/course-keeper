@@ -1,19 +1,27 @@
+:root {
+  --color-dawn-pink: #f2e8df;
+  --color-vista-white: #fcfaf7;
+  --color-white-linen: #f9f2ec;
+  --color-swirl: #d7cdc4;
+  --color-espresso: #5e2d1a;
+}
+
 #root {
   display: flex;
-  background-color: #f2e8df;
+  background-color: var(--color-dawn-pink);
   width: 100%;
   min-height: 100vh;
-  color: #5e2d1a;
+  color: var(--color-espresso);
 }
 
 aside {
   width: 12.5rem;
-  background-color: #fcfaf7;
+  background-color: var(--color-vista-white);
   padding: 3.5rem 1rem;
 }
 
 main {
-  background-color: #f9f2ec;
+  background-color: var(--color-white-linen);
   margin: 2rem 2rem 2rem 0;
   padding: 1.5rem;
   flex-grow: 1;

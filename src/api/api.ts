@@ -12,10 +12,9 @@ class Api {
   static post(
     url: string,
     body?: any,
-    queryParams?: any,
     config: Partial<AxiosRequestConfig> = {}
   ) {
-    return axiosInstance.post(url + queryParams, body, {
+    return axiosInstance.post(url, body, {
       ...apiRequestConfig,
       ...config,
     });

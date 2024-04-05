@@ -1,29 +1,52 @@
-import { memo } from "react";
+import { FormEvent, memo } from "react";
+import { Fieldset } from "../../form/Fieldset/Fieldset";
 import classes from "./CourseForm.module.css";
 
-export const CourseForm = memo(() => {
+interface ICourseFormProps {
+  addCourse: (data: any) => void;
+}
+
+export const CourseForm = memo(({ addCourse }: ICourseFormProps) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const form = new FormData(event.currentTarget);
+    const data = Object.fromEntries(form.entries());
+
+    addCourse(data);
+  };
+
   return (
-    <form className={classes.form}>
-      <fieldset>
-        <label htmlFor="title">Name of course</label>
-        <input id="title" type="text" name="title" />
-      </fieldset>
-      <fieldset>
-        <label htmlFor="link">Link</label>
-        <input id="link" type="url" name="link" />
-      </fieldset>
-      <fieldset>
-        <label htmlFor="startDate">When would you like to start?</label>
-        <input id="startDate" type="date" name="startDate" />
-      </fieldset>
-      <fieldset>
-        <label htmlFor="expireDate">When course will be expired?</label>
-        <input id="expireDate" type="date" name="expireDate" />
-      </fieldset>
-      <fieldset>
-        <label htmlFor="estimate">Estimate</label>
-        <input id="estimate" type="number" name="estimate" />
-      </fieldset>
+    <form className={classes.form} onSubmit={handleSubmit}>
+      <Fieldset
+        label="Name of course"
+        id="name"
+        type="text"
+        name="name"
+        required
+      />
+      <Fieldset label="Link" id="url" type="url" name="url" required />
+      <Fieldset
+        label="When would you like to start?"
+        id="startDate"
+        type="date"
+        name="startDate"
+        required
+      />
+      <Fieldset
+        label="When course will be expired?"
+        id="expireDate"
+        type="date"
+        name="expireDate"
+        required
+      />
+      <Fieldset
+        label="Duration in hours"
+        id="duration"
+        type="number"
+        name="duration"
+        required
+      />
       <button>Add</button>
     </form>
   );

@@ -1,8 +1,11 @@
-export interface ICourse {
-  id: string;
+export interface INewCourse {
   name: string;
   url: string;
-  duration: boolean;
+  duration: number;
   startDate: string;
+}
+
+export interface ICourse extends INewCourse {
+  id: string;
   priority: string;
 }

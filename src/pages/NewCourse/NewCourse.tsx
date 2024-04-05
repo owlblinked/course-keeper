@@ -7,9 +7,7 @@ export const NewCourse = () => {
   const addCourse = useCallback(async (data: INewCourse) => {
     console.log("data", data);
     try {
-      const response = await Api.post("/courses", {
-        body: data,
-      });
+      const response = await Api.post("/courses", data);
 
       console.log("response", response);
     } catch (error) {

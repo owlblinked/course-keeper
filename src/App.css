@@ -3,12 +3,13 @@
   --color-vista-white: #fcfaf7;
   --color-white-linen: #f9f2ec;
   --color-swirl: #d7cdc4;
+  --color-santa-fe: #b26b4d;
   --color-espresso: #5e2d1a;
 }
 
 #root {
   display: flex;
-  background-color: var(--color-dawn-pink);
+  background-color: var(--color-santa-fe);
   width: 100%;
   min-height: 100vh;
   color: var(--color-espresso);
@@ -16,7 +17,7 @@
 
 aside {
   width: 12.5rem;
-  background-color: var(--color-vista-white);
+  background-color: var(--color-dawn-pink);
   padding: 3.5rem 1rem;
 }
 

@@ -5,7 +5,6 @@ import Api from "../../api/api";
 
 export const NewCourse = () => {
   const addCourse = useCallback(async (data: INewCourse) => {
-    console.log("data", data);
     try {
       const response = await Api.post("/courses", data);
 

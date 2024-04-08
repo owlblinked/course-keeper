@@ -1,0 +1,9 @@
+.item {
+  background-color: var(--color-dawn-pink);
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+
+.course {
+  display: block;
+  padding: 1rem;
+}

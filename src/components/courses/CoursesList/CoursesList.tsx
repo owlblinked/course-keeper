@@ -1,6 +1,7 @@
 import { memo } from "react";
 import { CourseItem } from "../CourseItem/CourseItem";
 import { ICourse } from "../../../types/courses";
+import classes from "./CoursesList.module.css";
 
 interface ICoursesListProps {
   data: ICourse[];
@@ -21,7 +22,7 @@ export const CoursesList = memo(
     }
 
     return (
-      <ul>
+      <ul className={classes.list}>
         {data.map((item) => (
           <CourseItem key={item.id} item={item} />
         ))}

@@ -10,7 +10,13 @@ export const Home = () => {
 
   return (
     <>
-      <Calendar onChange={onChange} value={value} />
+      <p>Tasks for today</p>
+      <Calendar
+        onChange={onChange}
+        value={value}
+        next2Label={null}
+        prev2Label={null}
+      />
     </>
   );
 };

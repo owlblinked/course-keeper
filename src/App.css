@@ -3,6 +3,7 @@
   --color-vista-white: #fcfaf7;
   --color-white-linen: #f9f2ec;
   --color-swirl: #d7cdc4;
+  --color-almond: #f0dccb;
   --color-santa-fe: #b26b4d;
   --color-espresso: #5e2d1a;
 }
@@ -44,4 +45,25 @@ a {
   color: var(--color-espresso);
   text-decoration: inherit;
   font-weight: 500;
+}
+
+.react-calendar {
+  width: 400px;
+  text-align: center;
+  background-color: var(--color-dawn-pink);
+  border-radius: 0.75rem;
+  padding: 0.8rem;
+}
+
+.react-calendar button {
+  background-color: inherit;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.4rem;
+}
+
+.react-calendar button:hover,
+.react-calendar button:active {
+  background-color: var(--color-white-linen);
 }

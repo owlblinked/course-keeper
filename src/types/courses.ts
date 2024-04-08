@@ -3,6 +3,7 @@ export interface INewCourse {
   url: string;
   duration: number;
   startDate: string;
+  expireDate: string;
 }
 
 export interface ICourse extends INewCourse {

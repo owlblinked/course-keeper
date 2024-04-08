@@ -47,7 +47,7 @@ export const CourseForm = memo(({ addCourse }: ICourseFormProps) => {
         name="duration"
         required
       />
-      <button>Add</button>
+      <button className={classes.btn}>Add</button>
     </form>
   );
 });

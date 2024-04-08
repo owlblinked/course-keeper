@@ -8,10 +8,10 @@ interface ICourseProps {
 
 export const CourseItem = ({ item }: ICourseProps) => {
   return (
-    <li className={classes.item}>
+    <li>
       <Link to={`/course/${item.id}`} className={classes.course}>
         <p>{item.name}</p>
-        <p>{item.startDate}</p>
+        <span>Expire date: {item.expireDate}</span>
       </Link>
     </li>
   );

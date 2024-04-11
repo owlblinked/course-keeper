@@ -14,6 +14,7 @@ export const Home = () => {
       <Calendar
         onChange={onChange}
         value={value}
+        locale="en-GB"
         next2Label={null}
         prev2Label={null}
       />

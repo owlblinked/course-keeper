@@ -1,10 +1,10 @@
 import { useCallback } from "react";
-import { CourseForm } from "../../components/courses/CourseForm/CourseForm";
-import { INewCourse } from "../../types/courses";
 import Api from "../../api/api";
+import { ADD_COURSE_FIELDS } from "../../constants/form";
+import { Form } from "../../components/form/Form/Form";
 
 export const NewCourse = () => {
-  const addCourse = useCallback(async (data: INewCourse) => {
+  const addCourse = useCallback(async (data: any) => {
     try {
       const response = await Api.post("/courses", data);
 
@@ -14,5 +14,11 @@ export const NewCourse = () => {
     }
   }, []);
 
-  return <CourseForm addCourse={addCourse} />;
+  return (
+    <Form
+      onSubmitData={addCourse}
+      fields={ADD_COURSE_FIELDS}
+      submitText="Add"
+    />
+  );
 };

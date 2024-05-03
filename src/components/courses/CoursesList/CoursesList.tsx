@@ -6,13 +6,14 @@ import classes from "./CoursesList.module.css";
 interface ICoursesListProps {
   data: ICourse[];
   loading?: boolean;
+  handleDeleteCourse: (id: string) => void;
 }
 
 const LOADING_TEXT = "Loading list...";
 const ERROR_TEXT = "No course available. Please check back later.";
 
 export const CoursesList = memo(
-  ({ data, loading = false }: ICoursesListProps) => {
+  ({ data, loading = false, handleDeleteCourse }: ICoursesListProps) => {
     if (loading) {
       return <p>{LOADING_TEXT}</p>;
     }
@@ -24,7 +25,11 @@ export const CoursesList = memo(
     return (
       <ul className={classes.list}>
         {data.map((item) => (
-          <CourseItem key={item.id} item={item} />
+          <CourseItem
+            key={item.id}
+            item={item}
+            handleDeleteCourse={handleDeleteCourse}
+          />
         ))}
       </ul>
     );
